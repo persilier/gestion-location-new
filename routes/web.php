@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Admin\Roles\Roles;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,4 +18,8 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+});
+
+Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function () {
+    Route::get('/roles', Roles::class)->name('roles.index');
 });

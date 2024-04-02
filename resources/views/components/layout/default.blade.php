@@ -32,17 +32,18 @@
     <!-- COLOR PICKER CSS -->
     <link rel="stylesheet" href="/assets/libs/@simonwep/pickr/themes/nano.min.css">
 
+    <!-- SWEETALERT CSS -->
+    <link rel="stylesheet" href="/assets/libs/sweetalert2/sweetalert2.min.css">
+
     <!-- MAIN JS -->
     <script src="/assets/main.js"></script>
 
-
-
-
+    @livewireStyles
 
 </head>
 
 <body>
-
+    <x-alert />
     <!-- SWITCHER -->
     <x-common.switch-component />
     <!-- END SWITCHER -->
@@ -64,7 +65,7 @@
 
         <!-- MAIN-CONTENT -->
         <div class="content">
-            <div class="main-content">
+            <div class="main-content ">
 
                 {{ $slot }}
 
@@ -110,6 +111,9 @@
     <!-- SIMPLEBAR JS -->
     <script src="/assets/libs/simplebar/simplebar.min.js"></script>
 
+    <!-- SWEETALERT JS -->
+    <script src="/assets/libs/sweetalert2/sweetalert2.min.js"></script>
+
     <!-- JSVector Maps JS -->
     <script src="/assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
 
@@ -139,7 +143,9 @@
     <script type="module" src="/assets/custom-switcher-508a7845.js"></script>
 
     <!-- END SCRIPTS -->
+    @stack('modals')
 
+    @livewireScripts
 </body>
 
 </html>

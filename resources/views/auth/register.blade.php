@@ -35,53 +35,68 @@
                 <div class="text-center my-[3rem] authentication-barrier">
                     <span>OR</span>
                 </div>
-                <div class="grid grid-cols-12 gap-y-4">
-                    <div class="xl:col-span-12 col-span-12 mt-0">
-                        <label for="signup-firstname" class="form-label text-default">First Name</label>
-                        <input type="text" class="form-control form-control-lg w-full !rounded-md"
-                            id="signup-firstname" placeholder="first name">
-                    </div>
-                    <div class="xl:col-span-12 col-span-12">
-                        <label for="signup-lastname" class="form-label text-default">Last Name</label>
-                        <input type="text" class="form-control form-control-lg w-full !rounded-md"
-                            id="signup-lastname" placeholder="last name">
-                    </div>
-                    <div class="xl:col-span-12 col-span-12">
-                        <label for="signup-password" class="form-label text-default">Password</label>
-                        <div class="input-group">
-                            <input type="password" class="form-control form-control-lg !rounded-e-none"
-                                id="signup-password" placeholder="password">
-                            <button aria-label="button" class="ti-btn ti-btn-light !rounded-s-none !mb-0"
-                                onclick="createpassword('signup-password',this)" type="button" id="button-addon2"><i
-                                    class="ri-eye-off-line align-middle"></i></button>
+                <form method="POST" action="{{ route('register') }}">
+                    @csrf
+                    <div class="grid grid-cols-12 gap-y-4">
+                        <div class="xl:col-span-12 col-span-12 mt-0">
+                            <label for="name" class="form-label text-default">{{ __('Name') }}</label>
+                            <input type="text" name="name" value="{{ old('name') }}"
+                                class="form-control form-control-lg w-full !rounded-md" id="name"
+                                placeholder="name">
+                            <x-input-error for="name" class="mt-2" />
+                        </div>
+                        <div class="xl:col-span-12 col-span-12">
+                            <label for="email" class="form-label text-default">{{ __('Email') }}</label>
+                            <input type="email" name="email" value="{{ old('email') }}"
+                                class="form-control form-control-lg w-full !rounded-md" id="email"
+                                placeholder="email">
+                            <x-input-error for="email" class="mt-2" />
+                        </div>
+                        <div class="xl:col-span-12 col-span-12">
+                            <label for="password" class="form-label text-default">{{ __('Password') }}</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control form-control-lg !rounded-e-none"
+                                    id="password" name="password" value="{{ old('password') }}" placeholder="password">
+                                <button aria-label="button" class="ti-btn ti-btn-light !rounded-s-none !mb-0"
+                                    onclick="createpassword('password',this)" type="button" id="button-addon2"><i
+                                        class="ri-eye-off-line align-middle"></i></button>
+                            </div>
+                            <x-input-error for="password" class="mt-2" />
+                        </div>
+                        <div class="xl:col-span-12 col-span-12 mb-4">
+                            <label for="password_confirmation" class="form-label text-default">Confirm Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control form-control-lg !rounded-e-none"
+                                    name="password_confirmation" id="password_confirmation"
+                                    placeholder="confirm password">
+                                <button aria-label="button" class="ti-btn ti-btn-light !rounded-s-none !mb-0"
+                                    onclick="createpassword('password_confirmation',this)" type="button"
+                                    id="button-addon21"><i class="ri-eye-off-line align-middle"></i></button>
+                            </div>
+                            <x-input-error for="password_confirmation" class="mt-2" />
+
+                            <div class="form-check mt-4 !ps-0 !inline-flex">
+                                <input class="form-check-input align-middle" type="checkbox" value=""
+                                    id="defaultCheck1">
+                                <label
+                                    class="form-check-label text-[#8c9097] dark:text-white/50 font-normal inline-block"
+                                    for="defaultCheck1">
+                                    By creating a account you agree to our <a href="{{ route('terms.show') }}"
+                                        class="text-success"><u>&nbsp;Terms &amp; Conditions</u></a>&nbsp; and&nbsp;
+                                    <a href="{{ route('policy.show') }}" class="text-success"><u>Privacy
+                                            Policy</u></a>
+                                </label>
+                            </div>
+
+                        </div>
+                        <div class="xl:col-span-12 col-span-12 grid mt-2">
+                            <button type="submit"
+                                class="ti-btn ti-btn-lg bg-primary text-white !font-medium dark:border-defaultborder/10">Create
+                                Account</button>
                         </div>
                     </div>
-                    <div class="xl:col-span-12 col-span-12 mb-4">
-                        <label for="signup-confirmpassword" class="form-label text-default">Confirm Password</label>
-                        <div class="input-group">
-                            <input type="password" class="form-control form-control-lg !rounded-e-none"
-                                id="signup-confirmpassword" placeholder="confirm password">
-                            <button aria-label="button" class="ti-btn ti-btn-light !rounded-s-none !mb-0"
-                                onclick="createpassword('signup-confirmpassword',this)" type="button"
-                                id="button-addon21"><i class="ri-eye-off-line align-middle"></i></button>
-                        </div>
-                        <div class="form-check mt-4 !ps-0 !inline-flex">
-                            <input class="form-check-input align-middle" type="checkbox" value=""
-                                id="defaultCheck1">
-                            <label class="form-check-label text-[#8c9097] dark:text-white/50 font-normal inline-block"
-                                for="defaultCheck1">
-                                By creating a account you agree to our <a href="terms.html"
-                                    class="text-success"><u>&nbsp;Terms &amp; Conditions</u></a>&nbsp; and&nbsp; <a
-                                    href="terms.html" class="text-success"><u>Privacy Policy</u></a>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="xl:col-span-12 col-span-12 grid mt-2">
-                        <button type="button"
-                            class="ti-btn ti-btn-lg bg-primary text-white !font-medium dark:border-defaultborder/10">Create
-                            Account</button>
-                    </div>
-                </div>
+                </form>
+
                 <div class="text-center">
                     <p class="text-[0.75rem] text-[#8c9097] dark:text-white/50 mt-4">Already have an account? <a
                             href="{{ route('login') }}" class="text-primary" wire:navigate>Sign In</a></p>

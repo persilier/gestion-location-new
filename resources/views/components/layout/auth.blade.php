@@ -26,6 +26,9 @@
     <link rel="preload" as="style" href="/assets/app-6b44ca98.css" />
     <link rel="stylesheet" href="/assets/app-6b44ca98.css" />
 
+    <!-- SWEETALERT CSS -->
+    <link rel="stylesheet" href="/assets/libs/sweetalert2/sweetalert2.min.css">
+
     <!-- MAIN JS -->
     <script src="/assets/authentication-main.js"></script>
 
@@ -33,6 +36,7 @@
     <!-- SWIPER CSS -->
     <link rel="stylesheet" href="/assets/libs/swiper/swiper-bundle.min.css">
 
+    @livewireStyles
 
 </head>
 
@@ -54,6 +58,9 @@
     <!-- Swiper JS -->
     <script src="/assets/libs/swiper/swiper-bundle.min.js"></script>
 
+    <!-- SWEETALERT JS -->
+    <script src="/assets/libs/sweetalert2/sweetalert2.min.js"></script>
+
     <!-- Internal Sing-Up JS -->
     <link rel="modulepreload" href="/assets/authentication-fa6f6b78.js" />
     <script type="module" src="/assets/authentication-fa6f6b78.js"></script>
@@ -63,7 +70,9 @@
 
 
     <!-- END SCRIPTS -->
+    @stack('modals')
 
+    @livewireScripts
 </body>
 
 </html>
