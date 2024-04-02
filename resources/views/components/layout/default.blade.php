@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-nav-layout="vertical" class="light" data-header-styles="light"
+    data-menu-styles="dark">
+
+<head>
+
+    <!-- META DATA -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Spruko Technologies Private Limited">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="Description" content="Laravel Tailwind CSS Responsive Admin Web Dashboard Template">
+    <meta name="keywords"
+        content="admin panel in laravel, tailwind, tailwind template admin, laravel admin panel, tailwind css dashboard, admin dashboard template, admin template, tailwind laravel, template dashboard, admin panel tailwind, tailwind css admin template, laravel tailwind template, laravel tailwind, tailwind admin dashboard">
+
+    <!-- TITLE -->
+    <title> YNEX - Laravel Tailwind CSS Admin & Dashboard Template </title>
+
+    <!-- FAVICON -->
+    <link rel="icon" href="/assets/images/brand-logos/favicon.ico" type="image/x-icon">
+
+    <!-- ICONS CSS -->
+    <link href="/assets/iconfonts/icons.css" rel="stylesheet">
+
+    <!-- APP SCSS -->
+    <link rel="preload" as="style" href="/assets/app-6b44ca98.css" />
+    <link rel="stylesheet" href="/assets/app-6b44ca98.css" />
+
+    <!-- SIMPLEBAR CSS -->
+    <link rel="stylesheet" href="/assets/libs/simplebar/simplebar.min.css">
+
+    <!-- COLOR PICKER CSS -->
+    <link rel="stylesheet" href="/assets/libs/@simonwep/pickr/themes/nano.min.css">
+
+    <!-- MAIN JS -->
+    <script src="/assets/main.js"></script>
+
+
+
+
+
+</head>
+
+<body>
+
+    <!-- SWITCHER -->
+    <x-common.switch-component />
+    <!-- END SWITCHER -->
+
+    <!-- LOADER -->
+    <x-common.loader />
+    <!-- END LOADER -->
+
+    <!-- PAGE -->
+    <div class="page">
+
+        <!-- HEADER -->
+        <x-common.header />
+        <!-- END HEADER -->
+
+        <!-- SIDEBAR -->
+        <x-common.sidebar />
+        <!-- END SIDEBAR -->
+
+        <!-- MAIN-CONTENT -->
+        <div class="content">
+            <div class="main-content">
+
+                {{ $slot }}
+
+
+
+            </div>
+        </div>
+
+        <!-- END MAIN-CONTENT -->
+
+        <!-- SEARCH-MODAL -->
+        <x-common.search-modal />
+        <!-- END SEARCH-MODAL -->
+
+        <!-- FOOTER -->
+        <x-common.footer />
+        <!-- END FOOTER -->
+
+    </div>
+    <!-- END PAGE-->
+
+    <!-- SCRIPTS -->
+
+    <!-- SCROLL-TO-TOP -->
+    <div class="scrollToTop">
+        <span class="arrow"><i class="ri-arrow-up-s-fill text-xl"></i></span>
+    </div>
+    <div id="responsive-overlay"></div>
+
+    <!-- PRELINE JS -->
+    <script src="/assets/libs/preline/preline.js"></script>
+
+    <!-- POPPER JS -->
+    <script src="/assets/libs/@popperjs/core/umd/popper.min.js"></script>
+
+    <!-- COLOR PICKER JS -->
+    <script src="/assets/libs/@simonwep/pickr/pickr.es5.min.js"></script>
+
+    <!-- SWITCH JS -->
+    <link rel="modulepreload" href="/assets/switch-8d0a5268.js" />
+    <script type="module" src="/assets/switch-8d0a5268.js"></script>
+
+    <!-- SIMPLEBAR JS -->
+    <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+
+    <!-- JSVector Maps JS -->
+    <script src="/assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
+
+    <!-- JSVector Maps MapsJS -->
+    <script src="/assets/libs/jsvectormap/maps/world-merc.js"></script>
+
+    <!-- Apex Charts JS -->
+    <script src="/assets/libs/apexcharts/apexcharts.min.js"></script>
+
+    <!-- Chartjs Chart JS -->
+    <script src="/assets/libs/chart.js/chart.min.js"></script>
+
+    <!-- CRM-Dashboard -->
+    <link rel="modulepreload" href="/assets/crm-dashboard-5975eef2.js" />
+    <script type="module" src="/assets/crm-dashboard-5975eef2.js"></script>
+
+
+    <!-- STICKY JS -->
+    <script src="/assets/sticky.js"></script>
+
+    <!-- APP JS -->
+    <link rel="modulepreload" href="/assets/app-cff42aa7.js" />
+    <script type="module" src="/assets/app-cff42aa7.js"></script>
+
+    <!-- CUSTOM-SWITCHER JS -->
+    <link rel="modulepreload" href="/assets/custom-switcher-508a7845.js" />
+    <script type="module" src="/assets/custom-switcher-508a7845.js"></script>
+
+    <!-- END SCRIPTS -->
+
+</body>
+
+</html>
