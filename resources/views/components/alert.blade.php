@@ -19,12 +19,12 @@
             position: 'top',
             showConfirmButton: false,
             timer: 3000,
-            padding: '2em',
+            padding: '1em',
         });
         toast.fire({
             icon: alert.type === 'success' ? 'success' : alert.type === 'error' ? 'error' : 'info',
             title: alert.message,
-            padding: '2em',
+            padding: '1em',
         });
     }
 </script>

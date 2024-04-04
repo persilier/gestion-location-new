@@ -720,10 +720,15 @@
                                     href="chat.html"><i
                                         class="ti ti-headset text-[1.125rem] me-2 opacity-[0.7]"></i>Support</a>
                             </li>
-                            <li><a class="w-full ti-dropdown-item !text-[0.8125rem] !p-[0.65rem] !gap-x-0 !inline-flex"
-                                    href="signin-cover.html"><i
-                                        class="ti ti-logout text-[1.125rem] me-2 opacity-[0.7]"></i>Log Out</a>
-                            </li>
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <li><button
+                                        class="w-full ti-dropdown-item !text-[0.8125rem] !p-[0.65rem] !gap-x-0 !inline-flex"
+                                        type="submit"><i
+                                            class="ti ti-logout text-[1.125rem] me-2 opacity-[0.7]"></i>Log
+                                        Out</button>
+                                </li>
+                            </form>
                         </ul>
                     </div>
                 </div>

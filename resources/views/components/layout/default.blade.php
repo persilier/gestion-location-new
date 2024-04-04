@@ -22,12 +22,11 @@
     <!-- ICONS CSS -->
     <link href="/assets/iconfonts/icons.css" rel="stylesheet">
 
-    <!-- APP SCSS -->
-    <link rel="preload" as="style" href="/assets/app-6b44ca98.css" />
-    <link rel="stylesheet" href="/assets/app-6b44ca98.css" />
-
     <!-- SIMPLEBAR CSS -->
     <link rel="stylesheet" href="/assets/libs/simplebar/simplebar.min.css">
+
+    <!-- SELECT2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
 
     <!-- COLOR PICKER CSS -->
     <link rel="stylesheet" href="/assets/libs/@simonwep/pickr/themes/nano.min.css">
@@ -38,7 +37,8 @@
     <!-- MAIN JS -->
     <script src="/assets/main.js"></script>
 
-    @livewireStyles
+
+    @vite(['resources/css/app.css'])
 
 </head>
 
@@ -126,6 +126,13 @@
     <!-- Chartjs Chart JS -->
     <script src="/assets/libs/chart.js/chart.min.js"></script>
 
+    <!-- Select2 Cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <!-- Internal Select-2.js -->
+    <link rel="modulepreload" href="/assets/select2-fce7f173.js" />
+    <script type="module" src="/assets/select2-fce7f173.js"></script>
+
     <!-- CRM-Dashboard -->
     <link rel="modulepreload" href="/assets/crm-dashboard-5975eef2.js" />
     <script type="module" src="/assets/crm-dashboard-5975eef2.js"></script>
@@ -142,10 +149,37 @@
     <link rel="modulepreload" href="/assets/custom-switcher-508a7845.js" />
     <script type="module" src="/assets/custom-switcher-508a7845.js"></script>
 
+
+    {{-- sweet Alert script --}}
+    <script>
+        window.addEventListener('show-delete-confirmation', event => {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Livewire.dispatch('deleteConfirmed');
+                }
+            });
+        })
+
+        window.addEventListener('resourceDeleted', event => {
+            Swal.fire({
+                title: "Deleted!",
+                text: "the Resource has been deleted.",
+                icon: "success"
+            });
+        })
+    </script>
     <!-- END SCRIPTS -->
+    @livewire('wire-elements-modal')
     @stack('modals')
 
-    @livewireScripts
 </body>
 
 </html>
