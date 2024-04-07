@@ -14,8 +14,6 @@ class Roles extends Component
     use WithPagination;
 
     public $delete_id;
-    public $event = 'create-role';
-    public $title = 'Create Role';
     public ?Role $role = null;
     public RoleForm $form;
     public $perPage = 10;
@@ -60,6 +58,7 @@ class Roles extends Component
         $this->closeModal();
         $this->dispatch('refresh-list');
     }
+
     public function render()
     {
         return view('livewire.admin.roles.roles', [

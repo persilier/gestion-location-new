@@ -26,9 +26,14 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'username',
+        'nom',
+        'prenom',
         'email',
         'password',
+        'tel',
+        'adresse',
+        'statut',
     ];
 
     /**
@@ -63,5 +68,18 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+    public function scopeWithoutAuthUser($query): mixed
+    {
+        return $query->where('id', '!=', auth()->id());
+    }
+    public function scopeWithoutSuperAdmin($query): mixed
+    {
+        return $query->where('id', '!=', 1);
+    }
+
+    public function scopeActive($query)
+    {
+        return $query->where('statut', '=', 'actif');
     }
 }

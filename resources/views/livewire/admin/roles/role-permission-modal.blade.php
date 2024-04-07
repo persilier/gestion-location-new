@@ -4,7 +4,7 @@
     </div>
     <div class="box-body w-full flex flex-col items-center justify-center mx-auto mb-12 px-10">
 
-        <button type="button" class="ti-btn ti-btn-primary ti-btn-wave uppercase">{{ $role->name }}</button>
+        <button type="button" class="ti-btn ti-btn-primary !rounded-full ti-btn-wave">{{ $role->name }}</button>
 
         <div class="w-full grid grid-cols-12 gap-4 box items-start">
             <div class="box-header w-full">
@@ -48,8 +48,8 @@
                 <div class="mb-12 col-span-12">
                     <form wire:submit='givePermission' class="col-span-12">
                         @csrf
-                        <div wire:ignore>
-                            <select id="seachable-select" class="js-example-placeholder-single js-states form-control"
+                        <div class="mb-5" wire:ignore>
+                            <select id="selectize" class="js-example-placeholder-single js-states form-control"
                                 name="permission">
                                 @foreach ($permissions as $permission)
                                     <option value="{{ $permission->name }}">{{ $permission->name }}</option>
@@ -57,11 +57,14 @@
                             </select>
                         </div>
                         <button type="submit"
-                            class="ti-btn ti-btn-outline-danger ti-btn-wave mt-5">{{ __('Give permission') }}</button>
-
+                            class="ti-btn ti-btn-outline-danger !rounded-full ti-btn-wave">{{ __('Give permission') }}</button>
                     </form>
                 </div>
             </div>
-
         </div>
+        <script>
+            $(document).ready(function() {
+                $('#selectize').select2();
+            });
+        </script>
     </div>

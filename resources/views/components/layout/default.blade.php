@@ -25,14 +25,14 @@
     <!-- SIMPLEBAR CSS -->
     <link rel="stylesheet" href="/assets/libs/simplebar/simplebar.min.css">
 
-    <!-- SELECT2 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
-
     <!-- COLOR PICKER CSS -->
     <link rel="stylesheet" href="/assets/libs/@simonwep/pickr/themes/nano.min.css">
 
     <!-- SWEETALERT CSS -->
     <link rel="stylesheet" href="/assets/libs/sweetalert2/sweetalert2.min.css">
+
+    <!-- SELECT2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
 
     <!-- MAIN JS -->
     <script src="/assets/main.js"></script>
@@ -126,17 +126,16 @@
     <!-- Chartjs Chart JS -->
     <script src="/assets/libs/chart.js/chart.min.js"></script>
 
+    <!-- CRM-Dashboard -->
+    <link rel="modulepreload" href="/assets/crm-dashboard-5975eef2.js" />
+    <script type="module" src="/assets/crm-dashboard-5975eef2.js"></script>
+
     <!-- Select2 Cdn -->
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     <!-- Internal Select-2.js -->
     <link rel="modulepreload" href="/assets/select2-fce7f173.js" />
     <script type="module" src="/assets/select2-fce7f173.js"></script>
-
-    <!-- CRM-Dashboard -->
-    <link rel="modulepreload" href="/assets/crm-dashboard-5975eef2.js" />
-    <script type="module" src="/assets/crm-dashboard-5975eef2.js"></script>
-
 
     <!-- STICKY JS -->
     <script src="/assets/sticky.js"></script>

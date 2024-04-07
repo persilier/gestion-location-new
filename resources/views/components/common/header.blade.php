@@ -682,10 +682,12 @@
                     </button>
                     <div class="md:block hidden dropdown-profile">
                         <p class="font-semibold mb-0 leading-none text-[#536485] text-[0.813rem] ">
-                            {{ auth()->user()->name }}
+                            {{ auth()->user()->username }}
                         </p>
-                        <span class="opacity-[0.7] font-normal text-[#536485] block text-[0.6875rem] ">Web
-                            Designer</span>
+                        @foreach (auth()->user()->getRoleNames() as $role)
+                            <span
+                                class="opacity-[0.7] font-normal text-[#536485] block text-[0.6875rem] ">{{ $role }}</span>
+                        @endforeach
                     </div>
                     <div class="hs-dropdown-menu ti-dropdown-menu !-mt-3 border-0 w-[11rem] !p-0 border-defaultborder hidden main-header-dropdown  pt-0 overflow-hidden header-profile-dropdown dropdown-menu-end"
                         aria-labelledby="dropdown-profile">
@@ -693,7 +695,7 @@
                         <ul class="text-defaulttextcolor font-medium dark:text-[#8c9097] dark:text-white/50">
                             <li>
                                 <a class="w-full ti-dropdown-item !text-[0.8125rem] !gap-x-0  !p-[0.65rem] !inline-flex"
-                                    href="profile.html">
+                                    href="{{ route('profile') }}">
                                     <i class="ti ti-user-circle text-[1.125rem] me-2 opacity-[0.7]"></i>Profile
                                 </a>
                             </li>
@@ -709,7 +711,7 @@
                                         class="ti ti-clipboard-check text-[1.125rem] me-2 opacity-[0.7]"></i>Task
                                     Manager</a></li>
                             <li><a class="w-full ti-dropdown-item !text-[0.8125rem] !gap-x-0 !p-[0.65rem] !inline-flex"
-                                    href="mail-settings.html"><i
+                                    href="{{ route('settings') }}"><i
                                         class="ti ti-adjustments-horizontal text-[1.125rem] me-2 opacity-[0.7]"></i>Settings</a>
                             </li>
                             <li><a class="w-full ti-dropdown-item !text-[0.8125rem] !gap-x-0 !p-[0.65rem] !inline-flex "
