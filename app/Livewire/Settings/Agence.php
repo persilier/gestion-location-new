@@ -5,9 +5,11 @@ namespace App\Livewire\Settings;
 use App\Livewire\Forms\AgenceForm;
 use App\Models\Agence as ModelsAgence;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class Agence extends Component
 {
+    use WithFileUploads;
 
     public $agence;
     public AgenceForm $form;

@@ -5,9 +5,11 @@ namespace App\Livewire\Forms;
 use App\Models\Agence;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
+use Livewire\WithFileUploads;
 
 class AgenceForm extends Form
 {
+    use WithFileUploads;
     public ?Agence $agence = null;
     public $raisonSoc = '';
     public $logoAgence;
@@ -36,9 +38,14 @@ class AgenceForm extends Form
 
     public function updateAgence()
     {
-        $this->validate();
+        $validated = $this->validate();
 
-        $this->agence->update($this->validate());
+        $this->agence->update($validated);
+        if ($this->logoAgence) {
+            //$validated['logoAgence'] = $this->logoAgence->store('uploads', 'public');
+            $this->agence->clearMediaCollection('logos');
+            $this->agence->addMedia($this->logoAgence)->toMediaCollection('logos');
+        }
         return redirect()->route('manager.agence.index')->with('success', 'Agence successfully updated!');
     }
 
@@ -46,7 +53,7 @@ class AgenceForm extends Form
     {
         return [
             'raisonSoc' => ['required', 'string', 'min:4'],
-            'logoAgence' => ['nullable', 'sometimes', 'max:1024'],
+            'logoAgence' => ['nullable', 'image', 'sometimes', 'max:1024'],
             'ville' => ['required', 'string', 'min:4'],
             'pays' => ['required', 'string', 'min:4'],
             'telAgence' => ['required', 'string', 'min:4'],

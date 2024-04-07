@@ -7,26 +7,26 @@
             </span>
         </div>
         <div class="box-body grid grid-cols-12 gap-4">
-            <div class="py-3 center mx-auto col-span-3" x-data="{ src: '/assets/images/profile-34.jpeg' }">
+            <div class="py-3 flex items-center flex-col justify-center mx-auto col-span-3" x-data="{ src: '/assets/images/profile-34.jpeg' }">
                 <div class="px-4 py-5 ">
                     @if ($agence->logoAgence)
                         <div class="mb-4 w-full">
-                            <img src="" class="w-20 h-20 md:w-32 md:h-32 rounded-2xl object-cover "
-                                alt="image" />
+                            <img src="{{ $agence->getFirstMediaUrl('logos') }}"
+                                class="w-20 h-20 md:w-40 md:h-40 rounded-2xl object-cover " alt="logo" />
+                        </div>
+                    @elseif (!empty($agence->logoAgence))
+                        <div class="mb-4 w-full">
+                            <img src="/assets/images/faces/9.jpg" alt="image"
+                                class="w-20 h-20 md:w-40 md:h-40 rounded-2xl object-cover " />
                         </div>
                     @endif
-                    <div class="mb-4 w-full">
-                        <img src="/assets/images/faces/9.jpg" alt="image"
-                            class="w-20 h-20 md:w-32 md:h-32 rounded-2xl object-cover " />
-                    </div>
-
-                    <label class="cursor-pointer mt-6">
-                        <span
-                            class="mt-2 text-base leading-normal px-4 py-2 bg-danger text-white  rounded-full">{{ __('upload Logo') }}
+                    <label class="cursor-pointer center mt-6">
+                        <span type="button" class="ti-btn ti-btn-success-full label-ti-btn label-end">
+                            <i class="ri-image-fill label-ti-btn-icon ms-2"></i>
+                            {{ __('upload Logo') }}
                         </span>
-                        <input type='file' class="hidden" name="logoAgence" accept="image/png , image/jpeg"
-                            wire:model='logoAgence' id="logoAgence"
-                            @change ="src = URL.createObjectURL($event.target.files[0])" />
+                        <input type='file' class="hidden" name="logoAgence"
+                            accept="image/png , image/jpeg , image/jpg" wire:model='form.logoAgence' id="logoAgence" />
                     </label>
                     <x-input-error for="form.logoAgence" class="mt-2" />
                 </div>
