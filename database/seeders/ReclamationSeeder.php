@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Reclamation;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,6 @@ class ReclamationSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Reclamation::factory(10)->create();
     }
 }

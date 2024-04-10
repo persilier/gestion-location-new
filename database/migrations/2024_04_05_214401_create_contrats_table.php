@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('contrats', function (Blueprint $table) {
             $table->id();
+            $table->date('dateDebut');
+            $table->integer('dureeCont')->default(1);
+            $table->text('conditions');
+            $table->foreignId('locataire_id')->nullable()->constrained('locataires')->onDelete('cascade');
+            $table->foreignId('location_id')->nullable()->constrained('locations')->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

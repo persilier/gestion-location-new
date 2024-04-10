@@ -102,9 +102,9 @@
                             </select>
                             <x-input-error for="form.statut" class="mt-2" />
                         </div>
-                        <div class="xl:col-span-6 col-span-12">
+                        <div class="xl:col-span-6 col-span-12" wire:ignore>
                             <label class="form-label">Pays :</label>
-                            <select class="selectize form-control w-full !rounded-md" name="pays" id="pays"
+                            <select class="ti-form-select rounded-sm !py-2 !px-3" name="pays" id="pays"
                                 wire:model.blur='form.pays'>
                                 <option value=" ">choisir pays</option>
                                 <option value="Benin" {{ $agence->pays === 'Benin' ? 'Selected' : '' }}>
@@ -116,7 +116,6 @@
                             </select>
                             <x-input-error for="form.pays" class="mt-2" />
                         </div>
-
                     </div>
                     <div class="box-footer">
                         <div class="ltr:float-right rtl:float-left">

@@ -19,6 +19,19 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             AgenceSeeder::class,
             UserSeeder::class,
+            AgentSeeder::class,
+            ProprietaireSeeder::class,
+            LocataireSeeder::class,
+            BienSeeder::class,
+            AbonnementSeeder::class,
+            DepenseSeeder::class,
+            ReclamationSeeder::class,
+            VisiteSeeder::class,
+            LocationSeeder::class,
+            ContratSeeder::class,
+            LoyerSeeder::class,
+            PaiementSeeder::class,
+
         ]);
     }
 }

@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('biens', function (Blueprint $table) {
             $table->id();
+            $table->string('titre');
+            $table->string('adreBien');
+            $table->string('ville');
+            $table->string('pays');
+            $table->string('photoBien')->nullable();
+            $table->integer('supeBien');
+            $table->enum('typeBien', ['maison', 'immeuble'])->default('maison');
+            $table->foreignId('proprietaire_id')->nullable()->constrained('proprietaires')->onDelete('cascade');
+            $table->foreignId('agence_id')->nullable()->constrained('agences')->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

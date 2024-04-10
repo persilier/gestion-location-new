@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('depenses', function (Blueprint $table) {
             $table->id();
+            $table->text('descRepa');
+            $table->date('dateSignal');
+            $table->enum('statRepar', ['en attente', 'en cours', 'reglé']);
+            $table->float('coutRepar');
+            $table->foreignId('agence_id')->constrained('agences')->onDelete('cascade');
+            $table->foreignId('bien_id')->constrained('biens')->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

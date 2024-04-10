@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('abonnements', function (Blueprint $table) {
             $table->id();
+            $table->date('dateDebut');
+            $table->date('dateFin');
+            $table->enum('situation', ['active', 'inactive'])->default('active');
+            $table->text('conditions')->nullable();
+            $table->integer('commission')->default(0);
+            $table->foreignId('agence_id')->nullable()->constrained('agences')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('proprietaire_id')->nullable()->constrained('proprietaires')->onUpdate('cascade')->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

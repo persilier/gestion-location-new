@@ -55,7 +55,7 @@ class Users extends Component
     #[On('refresh-list')]
     public function render()
     {
-        $users = User::withoutSuperAdmin()->latest()->where('username', 'like', '%' . $this->search . '%')
+        $users = User::withoutSuperAdmin()->latest()->whereAny(['username', 'nom', 'prenom', 'tel', 'adresse', 'statut'], 'like', '%' . $this->search . '%')
             ->orderBy($this->sortField, $this->sortDirection)->paginate($this->perPage);
         return view('livewire.admin.users.users', [
             'users' => $users,

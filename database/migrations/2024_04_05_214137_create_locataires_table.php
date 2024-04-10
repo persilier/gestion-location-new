@@ -13,6 +13,18 @@ return new class extends Migration
     {
         Schema::create('locataires', function (Blueprint $table) {
             $table->id();
+            $table->string('cni');
+            $table->string('employeur');
+            $table->double('salaire');
+            $table->enum('situMaritale', ['marié', 'celibataire', 'divorcé', 'veuf']);
+            $table->integer('enfant')->default(0);
+            $table->string('numUrgence');
+            $table->string('nomGarant');
+            $table->string('numGarant');
+            $table->enum('typeLoc', ['morale', 'physique']);
+            $table->date('dateNaissance');
+            $table->string('lieuNaissance');
+            $table->foreignId('user_id')->nullable()->constrained('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

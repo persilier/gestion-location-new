@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('proprietaires', function (Blueprint $table) {
             $table->id();
+            $table->string('numCompte');
+            $table->enum('typeCompte', ['bancaire', 'mobile']);
+            $table->enum('typeProprio', ['physique', 'morale']);
+            $table->string('cniProprio');
+            $table->string('typePiece');
+            $table->string('ifuProprio')->nullable();
+            $table->foreignId('agence_id')->nullable()->constrained('agences')->onDelete('cascade');
+            $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -3,6 +3,8 @@
 use App\Livewire\Admin\Permissions\Permissions;
 use App\Livewire\Admin\Roles\Roles;
 use App\Livewire\Admin\Users\Users;
+use App\Livewire\Manager\Agents\Agents;
+use App\Livewire\Manager\Proprietaire\Proprietaires;
 use App\Livewire\Profile\Profile;
 use App\Livewire\Profile\Settings;
 use App\Livewire\Settings\Agence;
@@ -38,4 +40,6 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(
 
 Route::middleware(['auth', 'verified'])->name('manager.')->prefix('manager')->group(function () {
     Route::get('/settings', Agence::class)->name('agence.index');
+    Route::get('/manager/agents', Agents::class)->name('agents.index');
+    Route::get('/manager/proprietaires', Proprietaires::class)->name('proprietaires.index');
 });

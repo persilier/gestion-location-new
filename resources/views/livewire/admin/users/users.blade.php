@@ -4,7 +4,7 @@
         <div class="col-span-12">
             <div class="box">
                 <div class="box-header">
-                    <h5 class="box-title">{{ __('Liste des roles') }}</h5>
+                    <h5 class="box-title">{{ __('Liste des utilisateurs') }}</h5>
                     <button type="button" wire:click="$dispatch('openModal', { component: 'admin.users.user-modal' })"
                         class="ti-btn ti-btn-primary-full label-ti-btn">
                         <i class="ri-file-add-line label-ti-btn-icon me-2"></i>

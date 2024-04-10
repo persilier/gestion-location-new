@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('paiements', function (Blueprint $table) {
             $table->id();
+            $table->date('datePaie');
+            $table->double('montantVerse');
+            $table->double('restant');
+            $table->unsignedInteger('echeancemois');
+            $table->string('numeroFactures')->unique();
+            $table->string('codeTransaction')->unique();
+            $table->enum('statut', ['en cours', 'paye', 'en attente'])->default('en attente');
+            $table->boolean('validation')->default(false);
+            $table->foreignId('loyer_id')->constrained('loyers')->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

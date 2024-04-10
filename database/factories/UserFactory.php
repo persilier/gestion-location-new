@@ -43,10 +43,44 @@ class UserFactory extends Factory
         ];
     }
 
+
+    public function admin(): UserFactory
+    {
+        return $this->assignRole('admin');
+    }
+    public function manager(): UserFactory
+    {
+        return $this->assignRole('manager');
+    }
+    public function employe(): UserFactory
+    {
+        return $this->assignRole('employe');
+    }
+    public function locataire(): UserFactory
+    {
+        return $this->assignRole('locataire');
+    }
+    public function proprietaire(): UserFactory
+    {
+        return $this->assignRole('proprietaire');
+    }
+
+    /**
+     * @param array|\Spatie\Permission\Contracts\Role|string  ...$roles
+     * @return UserFactory
+     */
+    private function assignRole(...$roles): UserFactory
+    {
+        return $this->afterCreating(fn (User $user) => $user->syncRoles($roles));
+    }
+
+
     /**
      * Indicate that the model's email address should be unverified.
+     *
+     * @return static
      */
-    public function unverified(): static
+    public function unverified()
     {
         return $this->state(fn (array $attributes) => [
             'email_verified_at' => null,

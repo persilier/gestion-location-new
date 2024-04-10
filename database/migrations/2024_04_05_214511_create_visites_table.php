@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('visites', function (Blueprint $table) {
             $table->id();
+            $table->dateTime('dateHeure');
+            $table->text('commentaire');
+            $table->foreignId('bien_id')->constrained('biens')->onDelete('cascade');
+            $table->foreignId('agence_id')->constrained('agences')->onDelete('cascade');
+            $table->foreignId('agent_id')->constrained('agents')->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

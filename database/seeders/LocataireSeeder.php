@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Locataire;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,6 @@ class LocataireSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Locataire::factory(10)->create();
     }
 }

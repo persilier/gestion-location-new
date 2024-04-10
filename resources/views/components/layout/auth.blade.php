@@ -67,6 +67,11 @@
 
     <!-- Show Password JS -->
     <script src="/assets/show-password.js"></script>
+    <!-- CUSTOM-SWITCHER JS -->
+    <link rel="modulepreload" href="/assets/custom-switcher-508a7845.js" />
+    <script type="module" src="/assets/custom-switcher-508a7845.js"></script>
+
+    <!-- END SCRIPTS -->
 
 
     <!-- END SCRIPTS -->

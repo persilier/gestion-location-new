@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('loyers', function (Blueprint $table) {
             $table->id();
+            $table->date('dateLoyer');
+            $table->unsignedInteger('mensuel');
+            $table->unsignedInteger('year');
+            $table->double('caution')->nullable();
+            $table->foreignId('locataire_id')->nullable()->constrained('locataires')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('location_id')->nullable()->constrained('locations')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('agence_id')->constrained('agences')->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

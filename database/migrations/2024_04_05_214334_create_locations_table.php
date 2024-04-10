@@ -13,6 +13,21 @@ return new class extends Migration
     {
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
+            $table->string('titreLoca');
+            $table->integer('chambre');
+            $table->integer('salon');
+            $table->integer('douche');
+            $table->integer('wc');
+            $table->text('description');
+            $table->string('quartier');
+            $table->enum('etatLocal', ['nouveau', 'moyen', 'bon', 'mauvais']);
+            $table->float('chargeLocal')->default(0);
+            $table->float('prix')->default(0);
+            $table->enum('statutLocal', ['libre', 'occupé', 'maintenance'])->default('libre');
+            $table->integer('cuisine');
+            $table->string('photoLoca')->nullable();
+            $table->foreignId('bien_id')->constrained('biens')->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
+            $table->string('nomDocument');
+            $table->enum('typeDocument', ['jpeg', 'png', 'gif', 'jpg', 'pdf', 'doc', 'docx', 'xls', 'xlsx']);
             $table->timestamps();
         });
     }
