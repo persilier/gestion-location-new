@@ -6,7 +6,7 @@
                 <div class="box-header">
                     <h5 class="box-title">{{ __('Liste des Proprietaires') }}</h5>
                     <button type="button"
-                        wire:click="$dispatch('openModal', { component: 'manager.proprietaires.proprietaire-modal' })"
+                        wire:click="$dispatch('openModal', { component: 'manager.proprietaire.proprietaire-modal' })"
                         class="ti-btn ti-btn-primary-full label-ti-btn">
                         <i class="ri-file-add-line label-ti-btn-icon me-2"></i>
                         {{ __('Ajout Proprietaire') }}
@@ -154,11 +154,11 @@
                                                 <td>
                                                     <div class="hstack flex gap-3 text-[.9375rem]">
                                                         <button type="button"
-                                                            wire:click="$dispatch('openModal', { component: 'manager.proprietaires.proprietaire-show-modal',  arguments: { proprietaire: {{ $proprietaire->id }} } })"
+                                                            wire:click="$dispatch('openModal', { component: 'manager.proprietaire.proprietaire-show-modal',  arguments: { proprietaire: {{ $proprietaire->id }} } })"
                                                             class="ti-btn ti-btn-sm ti-btn-success !rounded-full"><i
                                                                 class="ri-list-settings-line"></i></button>
                                                         <button
-                                                            wire:click="$dispatch('openModal', { component: 'manager.proprietaires.proprietaire-modal',  arguments: { proprietaire: {{ $proprietaire->id }} } })"
+                                                            wire:click="$dispatch('openModal', { component: 'manager.proprietaire.proprietaire-modal',  arguments: { proprietaire: {{ $proprietaire->id }} } })"
                                                             class="ti-btn ti-btn-sm ti-btn-info !rounded-full"><i
                                                                 class="ri-edit-line"></i></button>
                                                         <button type="button"

@@ -14,7 +14,7 @@
         content="admin panel in laravel, tailwind, tailwind template admin, laravel admin panel, tailwind css dashboard, admin dashboard template, admin template, tailwind laravel, template dashboard, admin panel tailwind, tailwind css admin template, laravel tailwind template, laravel tailwind, tailwind admin dashboard">
 
     <!-- TITLE -->
-    <title> YNEX - Laravel Tailwind CSS Admin & Dashboard Template </title>
+    <title> Gestion-Location </title>
 
     <!-- FAVICON -->
     <link rel="icon" href="/assets/images/brand-logos/favicon.ico" type="image/x-icon">
@@ -28,14 +28,10 @@
     <!-- COLOR PICKER CSS -->
     <link rel="stylesheet" href="/assets/libs/@simonwep/pickr/themes/nano.min.css">
 
-    <!-- FlatPickr CSS -->
-    <link rel="stylesheet" href="/assets/libs/flatpickr/flatpickr.min.css">
 
     <!-- SWEETALERT CSS -->
     <link rel="stylesheet" href="/assets/libs/sweetalert2/sweetalert2.min.css">
 
-    <!-- SELECT2 CSS -->
-    <link rel="stylesheet" href="/assets/libs/tom-select/css/tom-select.default.min.css">
 
     <!-- MAIN JS -->
     <script src="/assets/main.js"></script>
@@ -98,15 +94,6 @@
     </div>
     <div id="responsive-overlay"></div>
 
-    <!-- Jquery Cdn -->
-    <script src="/assets/js/jquery-3.6.1.min.js"></script>
-
-    <!-- Select2 Cdn -->
-    <script src="/assets/js/select2.min.js"></script>
-
-    <!-- Internal Select-2.js -->
-    <link rel="modulepreload" href="/assets/js/select2.js" />
-    <script type="module" src="/assets/js/select2.js"></script>
 
     <!-- PRELINE JS -->
     <script src="/assets/libs/preline/preline.js"></script>
@@ -146,10 +133,7 @@
     <!-- STICKY JS -->
     <script src="/assets/sticky.js"></script>
 
-    <!-- Date & Time Picker JS -->
-    <script src="/assets/libs/flatpickr/flatpickr.min.js"></script>
-    <link rel="modulepreload" href="/assets/date-time_pickers-43a066d2.js" />
-    <script type="module" src="/assets/date-time_pickers-43a066d2.js"></script>
+
 
     <!-- APP JS -->
     <link rel="modulepreload" href="/assets/app-cff42aa7.js" />
@@ -159,9 +143,7 @@
     <link rel="modulepreload" href="/assets/custom-switcher-508a7845.js" />
     <script type="module" src="/assets/custom-switcher-508a7845.js"></script>
 
-    <!-- TOM-SELECT JS -->
-    <link rel="modulepreload" href="/assets/libs/tom-select/js/tom-select.complete.min.js" />
-    <script type="module" src="/assets/libs/tom-select/js/tom-select.complete.min.js"></script>
+
 
 
     {{-- sweet Alert script --}}

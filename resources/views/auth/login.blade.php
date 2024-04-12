@@ -3,7 +3,7 @@
         <div class="flex justify-center items-center h-full">
             <div class="xxl:col-span-3 xl:col-span-3 lg:col-span-3 md:col-span-3 sm:col-span-2"></div>
             <div class="xxl:col-span-6 xl:col-span-6 lg:col-span-6 md:col-span-6 sm:col-span-8 col-span-12">
-                <div class="p-[3rem]">
+                <div class="p-[3rem] w-full">
                     <div class="mb-4">
                         <a aria-label="anchor" href="index.html">
                             <img src="/assets/images/brand-logos/desktop-logo.png" alt=""
@@ -39,7 +39,7 @@
                     </div>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-                        <div class="grid grid-cols-12 gap-y-4">
+                        <div class="grid grid-cols-12 gap-y-4 w-full">
                             <div class="xl:col-span-12 col-span-12 mt-0">
                                 <label for="email" class="form-label text-default">{{ __('Email') }}</label>
                                 <input type="text" name="email" value="{{ old('email') }}"

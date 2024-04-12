@@ -1,3 +1,11 @@
+@push('styles')
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+@endpush
+
+@push('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+@endpush
+
 <div>
     <x-breadcrumbs />
     <form class="mt-10 box max-w-7xl mx-auto" wire:submit='updateAgence'>
@@ -86,7 +94,7 @@
                     <div class="sm:grid grid-cols-12 gap-6 mb-6">
                         <div class="xl:col-span-6 col-span-12">
                             <label class="form-label">Ville :</label>
-                            <select class="form-control w-full !rounded-md" name="ville" wire:model='form.ville'
+                            <select class="ti-form-select w-full !rounded-md" name="ville" wire:model='form.ville'
                                 id="ville">
                                 <option value=" ">choisir ville</option>
                                 <option value="cotonou" {{ $agence->ville === 'cotonou' ? 'Selected' : '' }}>

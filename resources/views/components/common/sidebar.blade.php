@@ -60,16 +60,14 @@
                 <!-- Start::slide -->
                 <li class="slide">
                     <a href="widgets.html" class="side-menu__item">
-                        <i class="bx bx-gift side-menu__icon"></i>
-                        <span class="side-menu__label">{{ __('Biens') }} <span
-                                class="text-danger text-[0.75em] rounded-sm badge !py-[0.25rem] !px-[0.45rem] !bg-danger/10 ms-2">Hot</span></span>
+                        <i class="bx bx-buildings side-menu__icon"></i>
+                        <span class="side-menu__label">{{ __('Biens') }} </span>
                     </a>
                 </li>
                 <li class="slide has-sub">
                     <a href="javascript:void(0);" class="side-menu__item">
-                        <i class="bx bx-file-blank side-menu__icon"></i>
-                        <span class="side-menu__label">{{ __('Locations') }}<span
-                                class="text-secondary text-[0.75em] rounded-sm !py-[0.25rem] !px-[0.45rem] badge !bg-secondary/10 ms-2">New</span></span>
+                        <i class="bx bx-home-alt-2 side-menu__icon"></i>
+                        <span class="side-menu__label">{{ __('Locations') }}</span>
                         <i class="fe fe-chevron-right side-menu__angle"></i>
                     </a>
                     <ul class="slide-menu child1">
@@ -195,9 +193,8 @@
                 <!-- Start::slide -->
                 <li class="slide has-sub">
                     <a href="javascript:void(0);" class="side-menu__item">
-                        <i class="bx bx-task side-menu__icon"></i>
-                        <span class="side-menu__label">{{ __('Locataires') }}<span
-                                class="text-secondary text-[0.75em] rounded-sm badge !py-[0.25rem] !px-[0.45rem] !bg-secondary/10 ms-2">New</span></span>
+                        <i class="bx bx-user-pin side-menu__icon"></i>
+                        <span class="side-menu__label">{{ __('Locataires') }}</span>
                         <i class="fe fe-chevron-right side-menu__angle"></i>
                     </a>
                     <ul class="slide-menu child1">
@@ -205,7 +202,8 @@
                             <a href="javascript:void(0)">Task</a>
                         </li>
                         <li class="slide">
-                            <a href="task-kanban-board.html" class="side-menu__item">Kanban Board</a>
+                            <a href="{{ route('manager.locataires.index') }}"
+                                class="side-menu__item">{{ __('Locataires') }}</a>
                         </li>
                         <li class="slide">
                             <a href="task-listview.html" class="side-menu__item">List View</a>
@@ -220,7 +218,7 @@
                 <!-- Start::slide -->
                 <li class="slide has-sub">
                     <a href="javascript:void(0);" class="side-menu__item">
-                        <i class="bx bx-fingerprint side-menu__icon"></i>
+                        <i class="bx bx-street-view side-menu__icon"></i>
                         <span class="side-menu__label">{{ __('Agents') }}</span>
                         <i class="fe fe-chevron-right side-menu__angle"></i>
                     </a>
@@ -288,7 +286,7 @@
                 <!-- Start::slide -->
                 <li class="slide has-sub">
                     <a href="javascript:void(0);" class="side-menu__item">
-                        <i class="bx bx-error side-menu__icon"></i>
+                        <i class="bx bx-user-circle side-menu__icon"></i>
                         <span class="side-menu__label">{{ __('Proprietaires') }}</span>
                         <i class="fe fe-chevron-right side-menu__angle"></i>
                     </a>
@@ -307,23 +305,20 @@
                 </li>
                 <li class="slide">
                     <a href="widgets.html" class="side-menu__item">
-                        <i class="bx bx-gift side-menu__icon"></i>
-                        <span class="side-menu__label">{{ __('Paiements') }} <span
-                                class="text-danger text-[0.75em] rounded-sm badge !py-[0.25rem] !px-[0.45rem] !bg-danger/10 ms-2">Hot</span></span>
+                        <i class="bx bx-money-withdraw side-menu__icon"></i>
+                        <span class="side-menu__label">{{ __('Paiements') }}</span>
                     </a>
                 </li>
                 <li class="slide">
                     <a href="widgets.html" class="side-menu__item">
-                        <i class="bx bx-gift side-menu__icon"></i>
-                        <span class="side-menu__label">{{ __('Reclamations') }} <span
-                                class="text-danger text-[0.75em] rounded-sm badge !py-[0.25rem] !px-[0.45rem] !bg-danger/10 ms-2">Hot</span></span>
+                        <i class="bx bx-message-alt-dots side-menu__icon"></i>
+                        <span class="side-menu__label">{{ __('Reclamations') }}</span>
                     </a>
                 </li>
                 <li class="slide">
                     <a href="widgets.html" class="side-menu__item">
-                        <i class="bx bx-gift side-menu__icon"></i>
-                        <span class="side-menu__label">{{ __('Depenses') }} <span
-                                class="text-danger text-[0.75em] rounded-sm badge !py-[0.25rem] !px-[0.45rem] !bg-danger/10 ms-2">Hot</span></span>
+                        <i class="bx bx-credit-card-alt side-menu__icon"></i>
+                        <span class="side-menu__label">{{ __('Depenses') }} </span>
                     </a>
                 </li>
                 <!-- End::slide -->
@@ -335,7 +330,7 @@
                 <!-- Start::slide -->
                 <li class="slide has-sub">
                     <a href="javascript:void(0);" class="side-menu__item">
-                        <i class="bx bx-box side-menu__icon"></i>
+                        <i class="bx bx-cog side-menu__icon"></i>
                         <span class="side-menu__label">{{ __('Parametres') }}</span>
                         <i class="fe fe-chevron-right side-menu__angle"></i>
                     </a>
@@ -358,7 +353,7 @@
                 <!-- Start::slide -->
                 <li class="slide has-sub">
                     <a href="javascript:void(0);" class="side-menu__item">
-                        <i class="bx bx-box side-menu__icon"></i>
+                        <i class="bx bx-fingerprint side-menu__icon"></i>
                         <span class="side-menu__label">{{ __('Administration') }}</span>
                         <i class="fe fe-chevron-right side-menu__angle"></i>
                     </a>

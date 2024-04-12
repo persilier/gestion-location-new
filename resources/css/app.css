@@ -4,6 +4,9 @@
 /* select2 */
 
 /*! tailwindcss v3.3.5 | MIT License | https://tailwindcss.com*/
+@import "pikaday.css";
+@import "flatpickr.min.css";
+@import "select2.min.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
